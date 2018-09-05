@@ -7,12 +7,23 @@
 //
 
 #import "GAppDelegate.h"
+#import "GViewController.h"
 
 @implementation GAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UIWindow *window = [[UIWindow alloc] init];
+    window.backgroundColor = [UIColor whiteColor];
+    self.window = window;
+    [self.window makeKeyAndVisible];
+    
+    GViewController *ctrl = [[GViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ctrl];
+    
+    self.window.rootViewController = nav;
+    
     return YES;
 }
 

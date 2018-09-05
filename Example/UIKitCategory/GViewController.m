@@ -7,6 +7,7 @@
 //
 
 #import "GViewController.h"
+#import <UIKitCategory/UIKitCategory-umbrella.h>
 
 @interface GViewController ()
 
@@ -18,6 +19,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self createNavBack];
+    [self createNavTitle:@"Test"];
 }
 
 - (void)didReceiveMemoryWarning
