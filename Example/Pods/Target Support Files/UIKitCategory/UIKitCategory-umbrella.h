@@ -13,6 +13,7 @@
 #import "BundleClass.h"
 #import "UIImage+Bundle.h"
 #import "UIKitCategory.h"
+#import "UIResponder+Toast.h"
 #import "UIViewController+Nav.h"
 
 FOUNDATION_EXPORT double UIKitCategoryVersionNumber;

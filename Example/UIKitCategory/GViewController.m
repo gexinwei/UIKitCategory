@@ -22,6 +22,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self createNavBack];
     [self createNavTitle:@"Test"];
+    
+    [self showToast:@"卡惠大开大合发卡行"];
 }
 
 - (void)didReceiveMemoryWarning
