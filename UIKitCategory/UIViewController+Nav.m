@@ -37,6 +37,16 @@
     self.navigationItem.titleView = view;
 }
 
+- (void)createTitle:(NSString *)title font:(UIFont *)font aligment:(NSTextAlignment)aligment {
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, UIC_SCREEN_WIDTH-30, 44)];
+    label.text = title;
+    label.textColor = UIC_HEXCOLOR(0x333333FF);
+    label.font = font;
+    label.textAlignment = aligment;
+    self.navigationItem.titleView = label;
+}
+
 - (void)navLeftButtonAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }

@@ -16,6 +16,8 @@
 
 - (void)createNavTitleView:(UIView *)view;
 
+- (void)createTitle:(NSString *)title font:(UIFont *)font aligment:(NSTextAlignment)aligment;
+
 - (void)createNavRightWithImage:(UIImage *)imageNor selected:(UIImage *)imageSel selector:(SEL)selector;
 
 - (void)createNavRight:(NSString *)title titleColor:(UIColor *)titleColor selector:(SEL)selector;
