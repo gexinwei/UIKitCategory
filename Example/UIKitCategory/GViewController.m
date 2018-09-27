@@ -25,6 +25,10 @@
     [self createTitle:@"卡惠" font:[UIFont boldSystemFontOfSize:28] aligment:NSTextAlignmentLeft];
     
     [self showToast:@"卡惠大开大合发卡行"];
+    
+    [self showCheckNetViewOnView:self.view msg:nil refreshBtnEvent:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning
