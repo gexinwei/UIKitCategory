@@ -149,6 +149,9 @@
     if (_setButton) {
         _setButton.frame = CGRectMake((self.frame.size.width-150)/2, CGRectGetMaxY(_contentLabel.frame)+30, 150, 48);
     }
+    if (_coverButton) {
+        _coverButton.frame = CGRectMake(0, 0, UIC_SCREEN_WIDTH, CGRectGetMaxY(_contentLabel.frame));
+    }
 }
 
 
@@ -203,9 +206,10 @@
     
     if (!_coverButton) {
         
-        _coverButton = [[UIButton alloc] initWithFrame:self.bounds];
+        _coverButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, UIC_SCREEN_WIDTH, CGRectGetMaxY(_contentLabel.frame))];
         
         [_coverButton addTarget:self action:@selector(coverButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
+        _coverButton.exclusiveTouch = YES;
         
         [self addSubview:_coverButton];
     }
@@ -221,6 +225,7 @@
         [_setButton setBackgroundColor:UIC_HEXCOLOR(0xF66A45FF)];
         _setButton.layer.cornerRadius = 5;
         _setButton.layer.masksToBounds = YES;
+        _setButton.exclusiveTouch = YES;
         [_setButton addTarget:self action:@selector(setButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_setButton];
     }

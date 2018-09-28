@@ -1,5 +1,5 @@
 PODS:
-  - UIKitCategory (0.1.4)
+  - UIKitCategory (0.1.5)
 
 DEPENDENCIES:
   - UIKitCategory (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  UIKitCategory: 1694621bfe23c270f2a668d8744d7bff3edf9106
+  UIKitCategory: c7f431a3aa72e390ea7a226eb8d1217e7ec2153c
 
 PODFILE CHECKSUM: 9517dcb06a0e83e059c1fc942ab93207a5d124b6
 
