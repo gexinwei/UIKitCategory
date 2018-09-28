@@ -26,15 +26,43 @@
     
     [self showToast:@"卡惠大开大合发卡行"];
     
-    [self showCheckNetViewOnView:self.view msg:@"无网络，请检查网络设置" refreshBtnEvent:^{
-        
-    }];
+    [self ac1];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)ac1 {
+    [self showCheckNetViewOnView:self.view msg:nil refreshBtnEvent:^{
+        [self ac2];
+    }];
+}
+
+- (void)ac2 {
+    [self showNoNetViewOnView:self.view msg:nil refreshBtnEvent:^{
+        [self ac3];
+    }];
+}
+
+- (void)ac3 {
+    [self showNoDataViewOnView:self.view msg:nil refreshBtnEvent:^{
+        [self ac4];
+    }];
+}
+
+- (void)ac4 {
+    [self showErrorViewOnView:self.view msg:nil refreshBtnEvent:^{
+        [self ac5];
+    }];
+}
+
+- (void)ac5 {
+    [self showMaintainViewOnView:self.view msg:nil refreshBtnEvent:^{
+        [self ac1];
+    }];
 }
 
 @end

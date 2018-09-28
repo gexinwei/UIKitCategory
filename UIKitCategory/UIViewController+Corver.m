@@ -19,10 +19,17 @@
  */
 - (void)showNoDataViewOnView:(__kindof UIView *)onView msg:(NSString *)msg refreshBtnEvent:(dispatch_block_t)refreshBtnEvent {
     
-    [self hiddenCoverView];
-    
+    CoverView *view = (CoverView *)[self.view viewWithTag:COVER_TAG];
     UIImage *image = [UIImage imageName:@"img_no_data" inBundle:@"UIKitCategory" class:[BundleClass class]];
-    CoverView *view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"还没有数据" onView:onView refreashBtnEvent:refreshBtnEvent];
+    if (!view || ![view isKindOfClass:[CoverView class]]) {
+        view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"还没有数据" onView:onView refreashBtnEvent:refreshBtnEvent];
+    } else {
+        view.imageView.image = image;
+        view.refreshBtnEvent = refreshBtnEvent;
+        view.contentLabel.text = msg? :@"还没有数据";
+        view.hidden = NO;
+    }
+    view.setButton.hidden = YES;
     
     [onView addSubview:view];
 }
@@ -36,11 +43,18 @@
  */
 - (void)showCheckNetViewOnView:(__kindof UIView *)onView msg:(NSString *)msg refreshBtnEvent:(dispatch_block_t)refreshBtnEvent {
     
-    [self hiddenCoverView];
-    
+    CoverView *view = (CoverView *)[self.view viewWithTag:COVER_TAG];
     UIImage *image = [UIImage imageName:@"img_no_network" inBundle:@"UIKitCategory" class:[BundleClass class]];
-    CoverView *view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"无网络，请检查网络设置" onView:onView refreashBtnEvent:refreshBtnEvent];
+    if (!view || ![view isKindOfClass:[CoverView class]]) {
+        view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"无网络，请检查网络设置" onView:onView refreashBtnEvent:refreshBtnEvent];
+    } else {
+        view.imageView.image = image;
+        view.refreshBtnEvent = refreshBtnEvent;
+        view.contentLabel.text = msg? :@"无网络，请检查网络设置";
+        view.hidden = NO;
+    }
     [view setSetingButton];
+    view.setButton.hidden = NO;
     
     [onView addSubview:view];
 }
@@ -52,10 +66,17 @@
  */
 - (void)showNoNetViewOnView:(__kindof UIView *)onView msg:(NSString *)msg refreshBtnEvent:(dispatch_block_t)refreshBtnEvent {
     
-    [self hiddenCoverView];
-    
+    CoverView *view = (CoverView *)[self.view viewWithTag:COVER_TAG];
     UIImage *image = [UIImage imageName:@"img_no_network" inBundle:@"UIKitCategory" class:[BundleClass class]];
-    CoverView *view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"网络不给力，请稍候再试" onView:onView refreashBtnEvent:refreshBtnEvent];
+    if (!view || ![view isKindOfClass:[CoverView class]]) {
+        view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"网络不给力，请稍候再试" onView:onView refreashBtnEvent:refreshBtnEvent];
+    } else {
+        view.imageView.image = image;
+        view.refreshBtnEvent = refreshBtnEvent;
+        view.contentLabel.text = msg? :@"网络不给力，请稍候再试";
+        view.hidden = NO;
+    }
+    view.setButton.hidden = YES;
     
     [onView addSubview:view];
 }
@@ -69,10 +90,17 @@
  */
 - (void)showErrorViewOnView:(__kindof UIView *)onView msg:(NSString *)msg refreshBtnEvent:(dispatch_block_t)refreshBtnEvent {
     
-    [self hiddenCoverView];
-    
+    CoverView *view = (CoverView *)[self.view viewWithTag:COVER_TAG];
     UIImage *image = [UIImage imageName:@"img_server_crash" inBundle:@"UIKitCategory" class:[BundleClass class]];
-    CoverView *view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"服务器正在维护，请稍候再试" onView:onView refreashBtnEvent:refreshBtnEvent];
+    if (!view || ![view isKindOfClass:[CoverView class]]) {
+        view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"服务器正在维护，请稍候再试" onView:onView refreashBtnEvent:refreshBtnEvent];
+    } else {
+        view.imageView.image = image;
+        view.refreshBtnEvent = refreshBtnEvent;
+        view.contentLabel.text = msg? :@"服务器正在维护，请稍候再试";
+        view.hidden = NO;
+    }
+    view.setButton.hidden = YES;
     
     [onView addSubview:view];
 }
@@ -86,10 +114,17 @@
  */
 - (void)showMaintainViewOnView:(__kindof UIView *)onView msg:(NSString *)msg refreshBtnEvent:(dispatch_block_t)refreshBtnEvent {
     
-    [self hiddenCoverView];
-    
+    CoverView *view = (CoverView *)[self.view viewWithTag:COVER_TAG];
     UIImage *image = [UIImage imageName:@"img_server_upgrade" inBundle:@"UIKitCategory" class:[BundleClass class]];
-    CoverView *view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"升级优化中，敬请期待" onView:onView refreashBtnEvent:refreshBtnEvent];
+    if (!view || ![view isKindOfClass:[CoverView class]]) {
+        view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"升级优化中，敬请期待" onView:onView refreashBtnEvent:refreshBtnEvent];
+    } else {
+        view.imageView.image = image;
+        view.refreshBtnEvent = refreshBtnEvent;
+        view.contentLabel.text = msg? :@"升级优化中，敬请期待";
+        view.hidden = NO;
+    }
+    view.setButton.hidden = YES;
     
     [onView addSubview:view];
 }
@@ -101,7 +136,7 @@
     
     CoverView *view = (CoverView *)[self.view viewWithTag:COVER_TAG];
     if (view && [view isKindOfClass:[CoverView class]]) {
-        [view removeFromSuperview];
+        view.hidden = YES;
     }
 }
 
@@ -238,7 +273,7 @@
     
     if (self.superview) {
         
-        [self removeFromSuperview];
+        [self setHidden:YES];
     }
 }
 
