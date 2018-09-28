@@ -1,6 +1,6 @@
 {
   "name": "UIKitCategory",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "summary": "UIKit类别，用来处理导航栏、tabbar等相关自定义操作.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gexinwei/UIKitCategory",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/gexinwei/UIKitCategory.git",
-    "tag": "0.1.3"
+    "tag": "0.1.4"
   },
   "platforms": {
     "ios": "8.0"

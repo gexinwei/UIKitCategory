@@ -26,7 +26,7 @@
     
     [self showToast:@"卡惠大开大合发卡行"];
     
-    [self showCheckNetViewOnView:self.view msg:nil refreshBtnEvent:^{
+    [self showCheckNetViewOnView:self.view msg:@"无网络，请检查网络设置" refreshBtnEvent:^{
         
     }];
 }

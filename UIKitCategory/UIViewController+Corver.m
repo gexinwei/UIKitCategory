@@ -147,7 +147,7 @@
     _contentLabel.frame = CGRectMake(15, _imageView.frame.origin.y + _imageView.frame.size.height + 30, self.frame.size.width-30, bound.size.height+3);
     
     if (_setButton) {
-        _setButton.frame = CGRectMake((self.frame.size.width-100)/2, CGRectGetMaxY(_contentLabel.frame)+30, 100, 32);
+        _setButton.frame = CGRectMake((self.frame.size.width-150)/2, CGRectGetMaxY(_contentLabel.frame)+30, 150, 48);
     }
 }
 
@@ -214,12 +214,12 @@
 - (void)setSetingButton {
     if (!_setButton) {
         _setButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _setButton.frame = CGRectMake((self.frame.size.width-100)/2, CGRectGetMaxY(_contentLabel.frame)+30, 100, 32);
+        _setButton.frame = CGRectMake((self.frame.size.width-150)/2, CGRectGetMaxY(_contentLabel.frame)+30, 150, 48);
         [_setButton setTitle:@"前往设置" forState:UIControlStateNormal];
         [_setButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _setButton.titleLabel.font = [UIFont systemFontOfSize:16];
         [_setButton setBackgroundColor:UIC_HEXCOLOR(0xF66A45FF)];
-        _setButton.layer.cornerRadius = 16;
+        _setButton.layer.cornerRadius = 5;
         _setButton.layer.masksToBounds = YES;
         [_setButton addTarget:self action:@selector(setButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_setButton];
@@ -254,16 +254,12 @@
 - (void)setButtonEvent:(id)sender {
     NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        if ([[[UIDevice currentDevice] systemVersion] intValue] >= 10) {
-            if (@available(iOS 10.0, *)) {
-                [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
-                    
-                }];
-            } else {
-                // Fallback on earlier versions
-                [[UIApplication sharedApplication] openURL:url];
-            }
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+                
+            }];
         } else {
+            // Fallback on earlier versions
             [[UIApplication sharedApplication] openURL:url];
         }
     }
