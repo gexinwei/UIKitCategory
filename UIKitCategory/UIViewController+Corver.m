@@ -147,11 +147,13 @@
 
 /**
  设置覆盖图层不可操作
+
+ @param isUsabel 是否可用
  */
-- (void)setCoverViewUnUsable {
+- (void)setCoverViewUsable:(BOOL)isUsabel {
     CoverView *view = (CoverView *)[self.view viewWithTag:COVER_TAG];
     if (view && [view isKindOfClass:[CoverView class]]) {
-        view.userInteractionEnabled = NO;
+        view.userInteractionEnabled = isUsabel;
     }
 }
 

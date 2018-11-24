@@ -59,8 +59,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  设置覆盖图层不可操作
+ 
+ @param isUsabel 是否可用
  */
-- (void)setCoverViewUnUsable;
+- (void)setCoverViewUsable:(BOOL)isUsabel;
 
 @end
 
