@@ -23,6 +23,7 @@
     UIImage *image = [UIImage imageName:@"img_no_data" inBundle:@"UIKitCategory" class:[BundleClass class]];
     if (!view || ![view isKindOfClass:[CoverView class]]) {
         view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"还没有数据" onView:onView refreashBtnEvent:refreshBtnEvent];
+        view.tag = COVER_TAG;
     } else {
         view.imageView.image = image;
         view.refreshBtnEvent = refreshBtnEvent;
@@ -47,6 +48,7 @@
     UIImage *image = [UIImage imageName:@"img_no_network" inBundle:@"UIKitCategory" class:[BundleClass class]];
     if (!view || ![view isKindOfClass:[CoverView class]]) {
         view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"无网络，请检查网络设置" onView:onView refreashBtnEvent:refreshBtnEvent];
+        view.tag = COVER_TAG;
     } else {
         view.imageView.image = image;
         view.refreshBtnEvent = refreshBtnEvent;
@@ -70,6 +72,7 @@
     UIImage *image = [UIImage imageName:@"img_no_network" inBundle:@"UIKitCategory" class:[BundleClass class]];
     if (!view || ![view isKindOfClass:[CoverView class]]) {
         view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"网络不给力，请稍候再试" onView:onView refreashBtnEvent:refreshBtnEvent];
+        view.tag = COVER_TAG;
     } else {
         view.imageView.image = image;
         view.refreshBtnEvent = refreshBtnEvent;
@@ -94,6 +97,7 @@
     UIImage *image = [UIImage imageName:@"img_server_crash" inBundle:@"UIKitCategory" class:[BundleClass class]];
     if (!view || ![view isKindOfClass:[CoverView class]]) {
         view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"服务器正在维护，请稍候再试" onView:onView refreashBtnEvent:refreshBtnEvent];
+        view.tag = COVER_TAG;
     } else {
         view.imageView.image = image;
         view.refreshBtnEvent = refreshBtnEvent;
@@ -118,6 +122,7 @@
     UIImage *image = [UIImage imageName:@"img_server_upgrade" inBundle:@"UIKitCategory" class:[BundleClass class]];
     if (!view || ![view isKindOfClass:[CoverView class]]) {
         view = [[CoverView alloc] initWithImg:image title:@"" message:msg? :@"升级优化中，敬请期待" onView:onView refreashBtnEvent:refreshBtnEvent];
+        view.tag = COVER_TAG;
     } else {
         view.imageView.image = image;
         view.refreshBtnEvent = refreshBtnEvent;
@@ -137,6 +142,16 @@
     CoverView *view = (CoverView *)[self.view viewWithTag:COVER_TAG];
     if (view && [view isKindOfClass:[CoverView class]]) {
         view.hidden = YES;
+    }
+}
+
+/**
+ 设置覆盖图层不可操作
+ */
+- (void)setCoverViewUnUsable {
+    CoverView *view = (CoverView *)[self.view viewWithTag:COVER_TAG];
+    if (view && [view isKindOfClass:[CoverView class]]) {
+        view.userInteractionEnabled = NO;
     }
 }
 

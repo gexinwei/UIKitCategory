@@ -57,6 +57,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)hiddenCoverView;
 
+/**
+ 设置覆盖图层不可操作
+ */
+- (void)setCoverViewUnUsable;
+
 @end
 
 /***************************************************      QBCoverView      ***************************************************/
