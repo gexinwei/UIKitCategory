@@ -25,10 +25,15 @@
 
 - (void)createNavTitle:(NSString *)title {
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((UIC_SCREEN_WIDTH-68)/2, 34, 68, 17)];
+    UIFont *font = [UIFont systemFontOfSize:17];
+    NSDictionary *attr = @{NSFontAttributeName:font};
+    CGRect bounds = [title boundingRectWithSize:CGSizeMake(9999, 20) options:NSStringDrawingUsesLineFragmentOrigin attributes:attr context:nil];
+    float width = bounds.size.width>(UIC_SCREEN_WIDTH-100)? (UIC_SCREEN_WIDTH-100):bounds.size.width;
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((UIC_SCREEN_WIDTH-width)/2, 34, width, 17)];
     label.text = title;
     label.textColor = UIC_HEXCOLOR(0x333333FF);
-    label.font = [UIFont systemFontOfSize:17];
+    label.font = font;
     label.textAlignment = NSTextAlignmentCenter;
     self.navigationItem.titleView = label;
 }
@@ -39,7 +44,10 @@
 
 - (void)createTitle:(NSString *)title font:(UIFont *)font aligment:(NSTextAlignment)aligment {
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, UIC_SCREEN_WIDTH-30, 44)];
+    NSDictionary *attr = @{NSFontAttributeName:font};
+    CGRect bounds = [title boundingRectWithSize:CGSizeMake(9999, 20) options:NSStringDrawingUsesLineFragmentOrigin attributes:attr context:nil];
+    float width = bounds.size.width>(UIC_SCREEN_WIDTH-100)? (UIC_SCREEN_WIDTH-100):bounds.size.width;
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((UIC_SCREEN_WIDTH-width)/2, 0, width, 44)];
     label.text = title;
     label.textColor = UIC_HEXCOLOR(0x333333FF);
     label.font = font;

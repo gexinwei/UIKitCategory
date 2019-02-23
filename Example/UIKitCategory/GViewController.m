@@ -20,9 +20,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
-//    [self createNavBack];
+    [self createNavBack];
 //    [self createNavTitle:@"Test"];
-    [self createTitle:@"卡惠" font:[UIFont boldSystemFontOfSize:28] aligment:NSTextAlignmentLeft];
+//    [self createTitle:@"卡惠" font:[UIFont boldSystemFontOfSize:28] aligment:NSTextAlignmentLeft];
+    [self createTitle:@"间爱的疯狂就挨打了房间啊大大" font:[UIFont systemFontOfSize:18] aligment:NSTextAlignmentCenter];
     
     [self showToast:@"卡惠大开大合发卡行"];
     
