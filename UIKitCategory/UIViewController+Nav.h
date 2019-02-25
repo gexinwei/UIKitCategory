@@ -12,6 +12,10 @@
 
 - (void)createNavBack;
 
+- (void)createNavBack:(UIImage *)image;
+
+- (void)createNavLeft:(UIImage *)image selector:(SEL)selector;
+
 - (void)createNavTitle:(NSString *)title;
 
 - (void)createNavTitleView:(UIView *)view;

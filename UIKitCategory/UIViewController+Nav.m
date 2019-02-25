@@ -23,6 +23,26 @@
     [self.navigationItem setLeftBarButtonItems:[NSArray arrayWithObjects:item, nil]];
 }
 
+- (void)createNavBack:(UIImage *)image {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 44, 44);
+    button.contentEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 0);
+    [button setImage:image forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(navLeftButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [self.navigationItem setLeftBarButtonItems:[NSArray arrayWithObjects:item, nil]];
+}
+
+- (void)createNavLeft:(UIImage *)image selector:(SEL)selector {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 44, 44);
+    button.contentEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 0);
+    [button setImage:image forState:UIControlStateNormal];
+    [button addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [self.navigationItem setLeftBarButtonItems:[NSArray arrayWithObjects:item, nil]];
+}
+
 - (void)createNavTitle:(NSString *)title {
     
     UIFont *font = [UIFont systemFontOfSize:17];
