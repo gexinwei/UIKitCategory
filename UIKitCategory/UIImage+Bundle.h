@@ -3,7 +3,7 @@
 //  QBCriditRepayment
 //
 //  Created by ge wei on 2017/2/7.
-//  Copyright © 2017年 Qianbao. All rights reserved.
+//  Copyright © 2017年 葛新伟. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

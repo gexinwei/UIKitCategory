@@ -28,6 +28,8 @@
     [self showToast:@"卡惠大开大合发卡行"];
     
     [self ac1];
+    
+    [self createNavRight:@"查看历史" titleColor:UIC_HEXCOLOR(0x111111ff) selector:nil];
 }
 
 - (void)didReceiveMemoryWarning
