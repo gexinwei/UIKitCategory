@@ -25,9 +25,9 @@
 //    [self createTitle:@"卡惠" font:[UIFont boldSystemFontOfSize:28] aligment:NSTextAlignmentLeft];
     [self createTitle:@"间爱的疯狂就挨打了房间啊大大" font:[UIFont systemFontOfSize:18] aligment:NSTextAlignmentCenter];
     
-    [self showToast:@"卡惠大开大合发卡行"];
+//    [self showToast:@"卡惠大开大合发卡行"];
     
-    [self ac1];
+    [self ac5];
     
     [self createNavRight:@"查看历史" titleColor:UIC_HEXCOLOR(0x111111ff) selector:nil];
 }

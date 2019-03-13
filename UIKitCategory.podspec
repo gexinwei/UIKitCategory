@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UIKitCategory'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'UIKit类别，用来处理导航栏、tabbar等相关自定义操作.'
 
 # This description is used to generate tags and improve search results.
