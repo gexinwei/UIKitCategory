@@ -280,6 +280,7 @@
         _setButton.exclusiveTouch = YES;
         [_setButton addTarget:self action:@selector(setButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_setButton];
+        _coverButton.enabled = NO;
     }
 }
 
